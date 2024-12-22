@@ -1,0 +1,41 @@
+/*
+  Realiza un programa que calcule si un año es bisiesto o no. Nota: un año es bisiesto
+  si es número divisibles por 4, pero no si es divisibles por 100, excepto tambien sea divisibles por 400.
+ */
+package google_12;
+
+import java.util.Scanner;
+
+
+public class Google_12 {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Metodo scanner
+        Scanner teclado = new Scanner(System.in);
+        
+        //Declaracion de variables
+        int año;
+        
+        //Datos de entrada
+        System.out.println("\nRealizaremos la verificación de un año Bisiesto o no.");
+        System.out.println("\nIngrese el año para verificar si el año es bisiesto o no");
+        año = teclado.nextInt();
+        
+        //Datos del proceso y salida
+        if(año % 400 == 0){
+            System.out.println("El año ingresado es bisiesto");
+        }else if(año % 100 == 0){
+            System.out.println("El año ingresado no es bisiesto");
+        }else if(año % 4 == 0){
+            System.out.println("El año ingresado es bisiesto");
+        }else
+            System.out.println("El año ingresado no es bisiesto");
+        
+        teclado.close();
+             
+    }
+    
+}
