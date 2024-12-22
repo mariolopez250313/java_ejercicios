@@ -1,0 +1,41 @@
+/*
+ Declara dos variables (con el valor que desees), muestra por consola las operaciones
+basicas: suma, resta, multiplicacion, divicion.
+ */
+package google_1;
+
+import java.util.Scanner;
+
+
+public class Google_1 {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner teclado = new Scanner(System.in);
+        
+        // Declaracion de variables 
+        double num1, num2;
+
+        // Datos de entrada             
+        System.out.println("Ingrese primer número");
+        num1 = teclado.nextInt();
+        System.out.println("Ingrese segundo número");
+        num2 = teclado.nextInt();
+              
+        System.out.println("La suma entre los dos numeros es: " + (num1 + num2));
+        System.out.println("La resta entre los dos numeros es: " + (num1 - num2));
+        System.out.println("La multiplicacion entre los dos numeros es: " + (num1 * num2));
+       
+        // Manejo de divición
+        if(num2 !=0){
+            System.out.println("La divición entre los numeros es: " + (num1 / num2));
+        }else{
+            System.out.println("No se puede dividir entre cero.");
+        }
+        
+        teclado.close();
+    }
+    
+}
