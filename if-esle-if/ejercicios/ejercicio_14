@@ -1,0 +1,65 @@
+/*
+    El director de una escuela esta organizando un viaje de estudios y requiere determinar
+    cuánto debe cobrar a cada alumno y cuánto debe pagar a la compañía de viajes por el servicio.
+    la forma de cobrar es la siguiente:
+    * Si son 100 alumnos o más, el costo por cada alumno es de 65 euros.
+    * De 50 a 99 alumnos, el costo es de 70 euros.
+    * De 30 a 49 alumnos, el costo es de 95 euros.
+    * Menos de 30 alumnos, el costo de la renta del autobús es de 4000 euros, sin importar el número de alomnos.
+    Realiza un algoritmo que permita determinar el pago a la compañía de autobuses y lo que debe pagar cada alumno por el viaje.
+ */
+package google_14;
+
+import java.util.Scanner;
+
+
+public class Google_14 {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Metodo scanner
+        Scanner teclado = new Scanner(System.in);
+        
+        //Declaracion de variables
+        int numeroAlumnos;
+        double costoViaje;
+        final int rentaFija = 4000;
+        
+        //Datos de entrada
+        System.out.println("Ingrese cuantos alumnos asistiran al viaje");
+        numeroAlumnos = teclado.nextInt();
+        
+        //Datos del proceso y datos de salida
+        
+        //validacion de entrada
+        if(numeroAlumnos <= 0){
+            System.out.println("Lacantidad de alumnos debe ser mayor a 0.");
+        }else{
+            
+            if(numeroAlumnos >= 100){
+                costoViaje = numeroAlumnos * 65;
+                System.out.println("EL costo del viaje es de: " + costoViaje + " euros"
+                    + " y cada alumno debe pagar: " + (costoViaje/numeroAlumnos) + " euros.");
+            }else if(numeroAlumnos >= 50 && numeroAlumnos < 100 ){
+                costoViaje = numeroAlumnos * 70;
+                System.out.println("El costo del viaje es de: " + costoViaje + "euros"
+                + "y cada alumno de pagar: " + (costoViaje/numeroAlumnos) + "Euros.");
+            }else if(numeroAlumnos >= 30 && numeroAlumnos < 50){
+                costoViaje = numeroAlumnos * 95;
+             System.out.println("El costo del viaje es de: " + costoViaje + "euros"
+                + "y cada alumno de pagar: " + (costoViaje/numeroAlumnos) + "euros.");
+            }else if(numeroAlumnos < 30){
+             costoViaje = rentaFija;
+                System.out.println("El costo del viaje es de: " + rentaFija + " euros y "
+                        + "cada alumno debe pagar: " + (rentaFija/numeroAlumnos) + " euros." );
+            }
+        
+        } //fin validación de entrada, cerramos else.
+        
+        teclado.close();
+        
+    }
+    
+}
