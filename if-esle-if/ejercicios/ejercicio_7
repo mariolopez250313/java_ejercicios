@@ -1,0 +1,44 @@
+/*
+ Realiza un ejercicio que pida un número por teclado que pida el precio de un 
+ producto (puede tener decimales) y calcule el precio final con IVA. El iva sera
+ una constante del 21%.
+ */
+package google_7;
+
+import java.util.Scanner;
+
+
+public class Google_7 {
+
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Metodo Scanner
+        Scanner teclado = new Scanner(System.in);
+        
+        //Declaracion de variables
+        float Precio_producto, sub_total, Vlr_neto;
+        int cantidad;
+        final float IVA = 0.21; // constante 
+        
+        //Ingreso de datos
+        System.out.println("Ingrese el precio del producto");
+        Precio_producto = teclado.nextFloat();
+        System.out.println("Ingrese cantidad de producto a llevar");
+        cantidad = teclado.nextInt();
+        
+        //Datos del proceso
+        sub_total = Precio_producto * cantidad;
+        Vlr_neto = sub_total + (sub_total * IVA);
+        
+        //Datos de salida
+        System.out.println("El Subtotal de la compre es: " + sub_total);
+        System.out.println("Vlaro del IVA (21%) por la compra: " + (sub_total * IVA));
+        System.out.println("El precio final con IVA (21%) es: " + Vlr_neto);
+        
+        //cerramos metodo Scanner
+        teclado.close();
+    }
+    
+}
