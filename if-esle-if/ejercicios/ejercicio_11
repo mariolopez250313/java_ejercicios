@@ -1,0 +1,57 @@
+/*
+   Realiza un programa que lea 3 datos de entrada A, B y C. Estos corresponden a las dimenciones
+   de los lados de un triangulo. El programa debe determinar que tipo de triangulo es,
+   teniendo encuenta lo siguiente:
+    - Si se cumple pítagoras entonces es triangulo rectángulo.
+    - Si sólo dos lados del triangulo son iguales entonces es isósceles.
+    - Si los 3 lados son iguales entonces es equilátero.
+    - si no se cumple ninguna de las condiciones anteriores, es escaleno
+ */
+package google_11;
+
+import java.util.Scanner;
+
+
+public class Google_11 {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Metodo Scanner
+        Scanner teclado = new Scanner(System.in);
+        
+        //Declaración de variables
+        int a, b, c;
+        
+        //Datos de entrada
+        System.out.println("Ingrese el valor entero de los tres lados del tiengulo,"
+                + "para así verificar su clasificación.");
+        System.out.println("\nIngrese primer lado del triángulo");
+        a = teclado.nextInt();
+        System.out.println("\nIngrese segundo segundo lado del triángulo");
+        b = teclado.nextInt();
+        System.out.println("\nIngrese tercer lado del triángulo");
+        c = teclado.nextInt();
+        
+        //Datos del proceso y de salida
+        if((Math.pow(a, 2) == (Math.pow(b, 2) + Math.pow(c, 2))) ||
+            (Math.pow(b, 2) == (Math.pow(a, 2) + Math.pow(c, 2))) ||
+                (Math.pow(c, 2) == (Math.pow(b, 2) + Math.pow(a, 2)))){ // la suma de los dos catetos(b,c) es igual a la hipotenusa(a)
+            System.out.println("Es un triángulo Rectángulo, el cual cumple con el teorema de pitágoras");
+        }else if((a == b) && (c != b)){ // Dos lados iguales uno diferente
+            System.out.println("Es un triángulo Isósceles");
+        }else if((a == b) && (b == c)){ // tres lados iguales
+            System.out.println("Es un triángulo Equilátero");
+        }else if((a != b) && (a != c) && (b != c)){ // tres lados diferentes
+            System.out.println("Es un triángulo Escaleno");
+        }
+        /* Otra forma de indicar el trabgulo escaleno sin tener que realizar código
+           👉🏼 System.out.println("Es un trangulo escaleno"); 👈🏼
+        */   
+        
+        teclado.close();
+        
+    }
+    
+}
