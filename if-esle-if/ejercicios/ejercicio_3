@@ -1,0 +1,32 @@
+/*
+ Declara un String que contenga tu nombre, despues muestra un mensaje de bienvenida
+ por consola. Ejemplo: se ingresa "Fernando", se indique << Bienvenido Fernando >>
+ */
+package google_3;
+
+import java.util.Scanner;
+
+
+public class Google_3 {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner teclado = new Scanner(System.in);
+        
+        //Declaracion de variables
+        String nombre, mensaje = "Bienvenido";       
+        
+        //Solicitud de datos
+        System.out.println("Ingrese su nombre");
+        nombre = teclado.nextLine();
+        
+        //Mostramos mensaje
+        System.out.println(mensaje + " " + nombre + ".");
+        
+        //Cerramos el objeto Scanner
+        teclado.close();
+    }
+    
+}
