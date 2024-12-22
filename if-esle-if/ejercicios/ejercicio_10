@@ -1,0 +1,73 @@
+/*
+ Resaliza un programa que pida puntos centrales x1,y1,x2,y2 y los radios r1,r2 de
+ dos circunferencias y las clsifique en uno de estos estados:
+    - exteriores
+    - tangentes exteriores
+    - secantes
+    - tagentes interiores
+    - interiores
+    - interiores concéntricas
+ */
+package google_10;
+
+import java.util.Scanner;
+
+
+public class Google_10 {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Metodo scanner
+        Scanner teclado = new Scanner(System.in);
+        
+        //Declaracion de variables
+        int x1, y1, x2, y2, r1, r2;
+        double distancia;
+        
+        //Datos de entrada
+        System.out.println("Este programa calcula como son dos circunferencias entre sí,"
+                            + "conociendo sus centros y radios");
+        System.out.println("ingrese el valor para x1 de la primera circunferencia");
+        x1 = teclado.nextInt();
+        System.out.println("ingrese el valor para y1 de la primera circunferencia");
+        y1 = teclado.nextInt();
+        System.out.println("ingrese el valor del radio 'r1' de la primera circunferecia");
+        r1 = teclado.nextInt();
+        System.out.println("ingrese el valor para x2 de la segunda circunferencia");
+        x2 = teclado.nextInt();
+        System.out.println("ingrese el valor para y2 de la segunda circunferencia");
+        y2 = teclado.nextInt();
+        System.out.println("ingrese el valor del radio 'r2' de la primera circunferecia");
+        r2 = teclado.nextInt();
+        
+        //Datos del proceso
+        
+            //Calculamos distancia entre las circunferencias
+            distancia = Math.sqrt((Math.pow((x2 - x1), 2) + (Math.pow((y2 - y1), 2))));
+            
+            //exteriores
+            if(distancia > (r1 + r2)){
+                System.out.println("La posición relativa entre las dos circunfereicias es Exterior,"
+                        + "con un valor de: " + distancia);
+            }else if((distancia == (r1 + r2))){
+                System.out.println("La posición relativa entre las dos circunferencias es Tangente Exterior,"
+                        + "con un valor de: " + distancia);
+            }else if((Math.abs(r1 -r2) < distancia) && (distancia < (r1 +r2))){
+                System.out.println("La posición relativa entre las dos circunferencias es Secante,"
+                        + "con un valor de: " + distancia);
+            }else if(distancia == (Math.abs(r1 - r2))){
+                System.out.println("La posición relativa entre las dos circunferencias es Tangente Interior,"
+                        + "con un valor de: "+ distancia);
+            }else if((distancia > 0) && distancia < Math.abs(r1-r2)){
+                System.out.println("La posición relativa entre las dos circunferencias es Interiores,"
+                        + "con un valor de: "+ distancia);
+            }else if(distancia == 0){
+                System.out.println("La posición relativa entre las dos circunferencias es Interior Concentrica,"
+                        + "con un valor de: "+ distancia);
+            }
+            teclado.close();
+    }
+    
+}
