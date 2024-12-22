@@ -1,0 +1,41 @@
+/*
+ Realiza una app que calcule el área de un circulo (pi*R al cuadrado). El radio
+ se pedita por teclado (recuerda pasar de String a double con Double.parseDouble).
+ usa la contante PI y el metodo pow de Math.
+ */
+package google_4;
+
+import java.util.Scanner;
+
+
+public class Google_4 {
+
+   
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Metodo scanner
+        Scanner teclado = new Scanner(System.in);
+        
+        //Declaracion de variables
+        String radio_texto;
+        double radio, area;
+        
+        System.out.println("Ingrese el radio del circulo solo valores númericos");
+        radio_texto = teclado.nextLine();
+        
+        //Pasamos de un String a un Double
+        radio = Double.parseDouble(radio_texto);
+        
+        //caculamos el area del circulo
+        area = Math.PI * Math.pow(radio, 2);
+        
+        //Mostramos resultado
+        System.out.println("El área del circulo con radio " + radio + " y area " + area);
+        
+        //cerramos metodo scanner
+        teclado.close();
+            
+    }
+    
+}
