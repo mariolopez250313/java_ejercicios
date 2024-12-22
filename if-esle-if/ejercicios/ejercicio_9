@@ -1,0 +1,56 @@
+/*
+ Realiza un programa que pida dos números 'nota' y 'edad' y un carácter 'sexo' y muestre el 
+ mensaje 'ACEPTADA' si la nota es maroy o igual a 5, la edad es mayor o igual a 18 y el 
+ sexo es 'F'. En caso de que se cumpla lo mismo, pero el sexo sea 'M', debe imprimir 'POSIBLE'.
+ Si no se cumplen dichas condiciones se debe mostrar 'NO ACEPTADA'.
+ */
+package google_9;
+
+import java.util.Scanner;
+
+
+public class Google_9 {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Metodo Scanner
+        Scanner teclado = new Scanner(System.in);
+        
+        //Declaración de Variables
+        int nota, edad;
+        String genero;
+        
+        //Datos de entrada
+        System.out.println("Programa de Aceptacion");
+        System.out.println("Ingrese calificación de la nota");
+        nota = teclado.nextInt();
+        System.out.println("Ingrese su edad");
+        edad = teclado.nextInt();
+        //Validacion de entrada de género
+        while (true) {
+            System.out.println("Ingrese su género F - para Femenino y M - para Masculino");
+            genero = teclado.nextLine().trim().toUpperCase(); //Metodos (trim y toUppeCase) elimina espacios en blando antes o despues del texto y
+                                                              //comvierte todo a mayúscula, para aceptar entradas como f o m sin problemas.
+            if (genero.equals("F") || genero.equals("M")) { //genero.equals() evalúa si el valor ingresado es exactamente "F" ó "M"
+                System.out.println("Has ingresado un género válido: " + (genero.equals("F") ? "Femenino" : "Masculino")); //esta linea elige si imprimir "FEMENINO" o "MASCULINO" dependiendo del valor ingresado
+                break;//Cerramos el bucle
+            } else {
+                System.out.println("Entrada no válida. Por favor ingrese solo F o M.");// se ejecuta en caso de que el ingreso sea inválido
+            }
+        }//Fin de la validación
+        
+        //Datos del proceso y datos de salida
+        if((nota >= 5) && (edad >= 18) && (genero.equals("F"))){
+            System.out.println("ACEPTADA");
+        }else if((nota >= 5) && (edad >= 18) && (genero.equals("M"))){
+            System.out.println("POSIBLE");
+        }else{
+            System.out.println("NO ACEPTADA");
+        }
+        
+        teclado.close();
+    }
+    
+}
