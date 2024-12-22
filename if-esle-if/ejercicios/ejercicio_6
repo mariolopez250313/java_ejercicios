@@ -1,0 +1,37 @@
+/*
+ Lee un número por teclado y muestra por consola, el caracter al que pertenece
+ en la tabla ASCII. Ejemplo: se ingresa un 97, se muestra una 'a'
+ */
+package google_6;
+
+import java.util.Scanner;
+
+
+public class Google_6 {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //metodo scanner
+        Scanner teclado = new Scanner(System.in);
+        
+        //declaracion de variables
+        int numeroAscii;
+        char caracter;
+        
+        //solicitud de numero ASCII
+        System.out.println("Ingrese un número de la tabla ASCII");
+        numeroAscii = teclado.nextInt();
+        
+        //convertir número ASCII a carácter
+        caracter = (char) numeroAscii;
+        
+        //Mostramos el caracter correspondiente el código ASCII
+        System.out.println("El caracter correspondiente al código ASCII " + numeroAscii + " es: " + caracter);
+        
+        teclado.close();
+        
+    }
+    
+}
